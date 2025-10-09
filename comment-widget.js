@@ -105,8 +105,8 @@ const v_formHtml = `
     </div>
 
     <div id="c_targetWrapper" class="c-inputWrapper">
-        <label class="c-label c-targetLabel" for="entry.${s_targetId}">${s_targetFieldLabel}</label>
-        <select class="c-input c-targetInput" name="entry.${s_targetId}" id="entry.${s_targetId}">
+        <label class="c-label c-targetLabel" for="entry.${s_artId}">${s_artFieldLabel}</label>
+        <select class="c-input c-targetInput" name="entry.${s_artId}" id="entry.${s_artId}">
             <option value="one">option 1</option>
             <option value="two">option 2</option>
             <option value="three">option 3</option>
