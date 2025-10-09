@@ -405,8 +405,8 @@ function createComment(data) {
 
     if (data.Art) {
         let art = document.createElement('p');
-        site.innerText = s_targetText;
-        site.className = 'c-site';
+        art.innerText = s_targetText;
+        art.className = 'c-site';
         comment.appendChild(art);
     }
 
