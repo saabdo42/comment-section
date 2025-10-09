@@ -104,12 +104,12 @@ const v_formHtml = `
         <input class="c-input c-websiteInput" name="entry.${s_websiteId}" id="entry.${s_websiteId}" type="url" pattern="https://.*">
     </div>
 
-    <div id="c_targetWrapper" class="c-inputWrapper">
-        <label class="c-label c-targetLabel" for="entry.${s_artId}">${s_artFieldLabel}</label>
-        <select class="c-input c-targetInput" name="entry.${s_artId}" id="entry.${s_artId}">
-            <option value="one">Option 1</option>
-            <option value="two">Optionn 2</option>
-            <option value="three">Option 3</option>
+    <div id="c_artWrapper" class="c-inputWrapper">
+        <label class="c-label c-artLabel" for="entry.${s_artId}">${s_artFieldLabel}</label>
+        <select class="c-input c-artInput" name="entry.${s_artId}" id="entry.${s_artId}">
+            <option value="Option 1">Option 1</option>
+            <option value="Optionn 2">Optionn 2</option>
+            <option value="Option 3">Option 3</option>
         </select>
     </div>
 
