@@ -387,6 +387,7 @@ function createComment(data) {
     name.innerText = filteredName;
     name.className = 'c-name';
     comment.appendChild(name);
+    console.log("name ", data.name);
 
     // Timestamp
     let time = document.createElement('span');
@@ -405,7 +406,7 @@ function createComment(data) {
 
     if (data.Art) {
         let art = document.createElement('p');
-        art.innerText = data.Art;
+        art.innerText = "Commenting on " + data.Art;
         art.className = 'c-site';
         comment.appendChild(art);
     }
