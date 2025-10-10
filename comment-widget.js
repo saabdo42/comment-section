@@ -405,7 +405,7 @@ function createComment(data) {
 
     if (data.Art) {
         let art = document.createElement('p');
-        art.innerText = s_artText;
+        art.innerText = data.Art;
         art.className = 'c-site';
         comment.appendChild(art);
     }
