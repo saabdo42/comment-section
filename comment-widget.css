@@ -76,7 +76,7 @@
 form{ margin: 0;}
 
 #c_widget button, #c_submitButton { /* all buttons*/
-    padding: var(--gap-size);
+    padding: 5px var(--gap-size);
     font-family: 'pictochat';
     font-size: 18px;
     letter-spacing: 1px;
@@ -90,7 +90,7 @@ form{ margin: 0;}
 }
 #c_widget button:hover { /* all buttons on hover */
     background-color: var(--color1);
-    color: black;
+    color: white;
 }
 #c_widget button:disabled, #c_submitButton:disabled {opacity: 60%; cursor: none;}
 
@@ -149,10 +149,11 @@ form{ margin: 0;}
     margin-bottom: 15px;
     padding: var(--gap-size);
     border-radius: 5px;
-    border: 2px solid var(--color1);
+    border: 2px solid var(--color2);
 }
 .c-reply {
     display: block;
+    border-radius: 5px;
     width: 90%;
     margin-bottom: var(--gap-size);
     margin-left: auto;
@@ -161,10 +162,8 @@ form{ margin: 0;}
 }
 .c-reply:last-child {margin-bottom: 0;}
 .c-replyContainer {
-    margin: -10px;
-    margin-top: 10px;
+    margin: 0;
     padding: 10px;
-    background-color: black;
 }
 
 .c-name {
@@ -178,9 +177,9 @@ form{ margin: 0;}
     margin-left: var(--gap-size);
     font-style: italic;
     text-decoration: none;
-    color: var(--color2);
+    color: var(--color1);
 }
-.c-site:hover {color: orange;}
+.c-site:hover {color: black;}
 .c-timestamp {
     float: right;
     opacity: 75%;
