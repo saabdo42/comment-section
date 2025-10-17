@@ -53,79 +53,91 @@
         #c_rightButton - The right <button>
 */
 
-/* Main */
-#c_widget {
+@font-face{
+    font-family: "pictochat";
+    src: url("nds-true-bios.woff2");
+}
+:root{
+    --color1: #8AAAFF;
+    --color2: #e0ecff;
+    --gap-size: 10px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    overflow-x: hidden;
     box-sizing: border-box;
-    height: 100%;
-    overflow: auto;
-    padding: 20px;
-    background-image: url('sparkle-bg.gif'); /* F2U background provided by https://sadgrl.online/webmastery/downloads/tiledbgs */
-    background-attachment: fixed;
-    font-family: 'Courier New';
-    font-size: 16px;
-    color: white;
+    font-family: 'pictochat';
 }
 
-#c_widget button, #c_widget input[type=submit] {
-    padding: 4px;
-    font-family: 'Courier New';
+/* Main */
+#c_widget {
+    height: 100%;
+    padding: var(--gap-size);
+}
+form{ margin: 0;}
+
+#c_widget button, #c_submitButton { /* all buttons*/
+    padding: var(--gap-size);
+    font-family: 'pictochat';
+    font-size: 18px;
+    letter-spacing: 1px;
     text-decoration: none;
 	text-align: center;
-    text-transform: uppercase;
-    background-color: black;
-    color: #B766FF;
-    border: 1px solid white;
+    border-radius: 5px;
 }
-#c_widget button:hover, #c_widget input[type=submit]:hover {
-    color: white;
-    border: 1px solid #B766FF;
+#c_widget button{
+    background-color: var(--color2);
+    color: var(--color1);
 }
-#c_widget button:disabled, #c_widget input[type=submit]:disabled {opacity: 60%;}
-#c_widget button:disabled:hover, #c_widget input[type=submit]:disabled:hover {
-    color: #B766FF;
-    border: 1px solid white;
+#c_widget button:hover { /* all buttons on hover */
+    background-color: var(--color1);
+    color: black;
 }
+#c_widget button:disabled, #c_submitButton:disabled {opacity: 60%; cursor: none;}
 
 /* Input section */
 #c_inputDiv {
     margin-bottom: 15px;
     padding: 10px;
-    background-color: black;
-    border: 2px solid white;
+    background-color:  var(--color2);
+    border-radius: 5px;
 }
 
 #c_widgetTitle {
-    margin: -10px;
-    margin-bottom: 10px;
-    padding: 5px;
-    text-transform: uppercase;
-    font-style: italic;
-    font-weight: bold;
-    text-align: right;
-    background-color: #2D0B52;
+    margin: 0;
 }
 
 .c-inputWrapper {
-    display: block;
-    text-align: right;
+    display: inline-block;
+    margin: var(--gap-size);
 }
 .c-input {
     padding: 4px;
     color: black;
     border: 1px solid #2D0B52;
+    border-radius: 5px;
 	outline: none;
 }
-.c-input:focus {border: 1px solid #B766FF;}
+.c-input:focus {border: 2px solid var(--color1);}
 
 .c-textInput {
-    width: calc(100% - 10px);
-    max-width: 900px;
+    width: 100%;
     resize: none;
 }
+#c_textWrapper{
+    display: block;
+}
+
 #c_submitButton {
     display: block; 
     margin-left: auto; 
-    margin-right: 0;
+    background-color: white;
+    color: var(--color1);
+    outline: none;
+}
+#c_submitButton:hover{
+    background-color: var(--color1);
+    color: white;
+    cursor: pointer;
 }
 #c_replyingText {
     color: white;
@@ -135,19 +147,17 @@
 /* Comment section */
 .c-comment {
     margin-bottom: 15px;
-    padding: 10px;
-    border: 2px solid white;
-    background-color: #2D0B52; 
+    padding: var(--gap-size);
+    border-radius: 5px;
+    border: 2px solid var(--color1);
 }
 .c-reply {
     display: block;
     width: 90%;
-    margin-bottom: 10px;
+    margin-bottom: var(--gap-size);
     margin-left: auto;
-    margin-right: 0;
-    padding: 10px;
-    border: 2px solid white;
-    background-color: #2D0B52; 
+    padding: var(--gap-size);
+    border: 2px solid var(--color2);
 }
 .c-reply:last-child {margin-bottom: 0;}
 .c-replyContainer {
@@ -160,38 +170,31 @@
 .c-name {
     display: inline-block;
     margin: 0;
-    margin-right: 10px;
     padding: 0;
-    text-transform: uppercase;
     font-weight: bold;
+    color: orange;
 }
 .c-site {
-    text-transform: uppercase;
+    margin-left: var(--gap-size);
+    font-style: italic;
     text-decoration: none;
-    color: #B766FF;
+    color: var(--color2);
 }
-.c-site:hover {color: white;}
+.c-site:hover {color: orange;}
 .c-timestamp {
     float: right;
     opacity: 75%;
 }
 .c-text {
     margin: 0;
-    margin-left: -10px;
-    margin-right: -10px;
-    padding: 10px;
-    font-family: Verdana;
-    font-size: 14px;
+    padding: var(--gap-size);
     text-align: justify;
-    color: white;
-    background-color: black;
 }
 
 /* Pagination */
 #c_pagination {text-align: center;}
 .c-replyButton {
-    margin-top: 10px;
-    margin-right: 4px;
+    margin: var(--gap-size) 0;
 }
 .c-expandButton {
     margin-top: 10px;

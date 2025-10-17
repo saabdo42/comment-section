@@ -21,6 +21,7 @@ const s_stylePath = 'comment-widget.css';
 const s_formId = '1FAIpQLSe8UHzwg1qCuHScJypLamFhtftAGnuK6gi08_IXfLXBt3lDDQ';
 const s_nameId = '447535779';
 const s_websiteId = '1519744986';
+const s_artId = '2116058210';
 const s_textId = '2054149556';
 const s_pageId = '570110133';
 const s_replyId = '1434571309';
@@ -54,6 +55,7 @@ const s_filteredWords = [ // Add words to filter by putting them in quotes and s
 const s_widgetTitle = 'comments!';
 const s_nameFieldLabel = 'Name';
 const s_websiteFieldLabel = 'Website (Optional)';
+const s_artFieldLabel = 'Commenting on:'
 const s_textFieldLabel = '';
 const s_submitButtonLabel = 'submit';
 const s_loadingText = 'Loading comments...';
@@ -100,6 +102,16 @@ const v_formHtml = `
     <div id="c_websiteWrapper" class="c-inputWrapper">
         <label class="c-label c-websiteLabel" for="entry.${s_websiteId}">${s_websiteFieldLabel}</label>
         <input class="c-input c-websiteInput" name="entry.${s_websiteId}" id="entry.${s_websiteId}" type="url" pattern="https://.*">
+    </div>
+
+    
+    <div id="c_artWrapper" class="c-inputWrapper">
+        <label class="c-label c-artLabel" for="entry.${s_artId}">${s_artFieldLabel}</label>
+        <select class="c-input c-artInput" name="entry.${s_artId}" id="entry.${s_artId}">
+            <option value="Option 1">Option 1</option>
+            <option value="Optionn 2">Optionn 2</option>
+            <option value="Option 3">Option 3</option>
+        </select>
     </div>
 
     <div id="c_textWrapper" class="c-inputWrapper">
@@ -184,6 +196,7 @@ function getComments() {
     if (s_commentsOpen) {
         document.getElementById(`entry.${s_nameId}`).value = '';
         document.getElementById(`entry.${s_websiteId}`).value = '';
+        document.getElementById(`entry.${s_artId}`).value = '';
         document.getElementById(`entry.${s_textId}`).value = '';
     }
 
@@ -389,6 +402,13 @@ function createComment(data) {
         site.href = data.Website;
         site.className = 'c-site';
         comment.appendChild(site);
+    }
+
+    if (data.Art) {
+        let art = document.createElement('p');
+        art.innerText = "Commenting on " + data.Art;
+        art.className = 'c-site';
+        comment.appendChild(art);
     }
 
     // Text content
