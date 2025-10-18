@@ -66,6 +66,8 @@
     overflow-x: hidden;
     box-sizing: border-box;
     font-family: 'pictochat';
+    scrollbar-color: var(--purple) var(--section-color);
+    scrollbar-width: thin;
 }
 
 /* Main */
@@ -88,9 +90,10 @@ form{ margin: 0;}
     background-color: var(--color2);
     color: var(--color1);
 }
-#c_widget button:hover { /* all buttons on hover */
+#c_widget button:hover {
     background-color: var(--color1);
     color: white;
+    cursor: pointer;
 }
 #c_widget button:disabled, #c_submitButton:disabled {opacity: 60%; cursor: none;}
 
