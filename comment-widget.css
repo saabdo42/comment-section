@@ -142,10 +142,6 @@ form{ margin: 0;}
     color: white;
     cursor: pointer;
 }
-#c_replyingText {
-    color: white;
-    text-align: right;
-}
 
 /* Comment section */
 .c-comment {
